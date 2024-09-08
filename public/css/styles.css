@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f7770f;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background: url('/assets/backgroundcsgo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Character Image Styling */
+.character-image {
+    position: absolute; /* Allows precise positioning */
+    top: 40%; /* Adjust vertical position */
+    left: 2%; /* Adjust horizontal position */
+    width: 750px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it appears above other content if needed */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInSlow 4s forwards; /* Apply animation with the correct name and duration */
+}
+
+/* Welcome Font Image Styling */
+.welcome-font-image {
+    background: white; /* Set background color to white */
+    position: absolute; /* Allows precise positioning */
+    top: 10%; /* Adjust vertical position as needed */
+    left: 5%; /* Adjust horizontal position as needed */
+    max-width: 80%; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it appears above other content if needed */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInSlow 6s forwards; /* Apply the same animation */
+}
+
+/* Keyframe Animation for Character and Welcome Font Image */
+@keyframes fadeInSlow {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* End at original size */
+    }
+}
+
+/* About Us Image Styling */
+.about-us-image {
+    display: block;
+    margin: 20px auto; /* Center the image and add space around it */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Layout Styles */
+header {
+    background: black; /* Semi-transparent background for readability */
+    padding: 4px;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Fix header at the top */
+    left: 0;
+    z-index: 2; /* Ensure header appears above other content */
+    display: flex;
+    justify-content: space-between; /* Distribute space between logo and nav */
+    align-items: center; /* Center items vertically */
+}
+
+/* Logo */
+header img {
+    max-width: 150px;
+    margin-left: 20px; /* Space from the left edge */
+}
+
+/* Navigation Styles */
+nav {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Remove list styles */
+}
+
+nav a {
+    color: #e0e0e0;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px 10px 15px; /* Add top padding to avoid content being hidden under fixed header */
+    background: black; /* Semi-transparent background for readability */
+    margin-top: 70px; /* Ensure main content starts below header */
+    min-height: 100vh; /* Ensure the main section covers the full viewport height */
+    position: relative; /* Allow child elements like .character-image to be positioned correctly */
+    overflow: auto; /* Allow scrolling if content exceeds the viewport */
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 2; /* Ensure footer appears above other content */
+}
+
+.about-us-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Adjust to accommodate the total width of the images */
+    animation: scrollLeft 30s linear infinite; /* Apply scrolling animation */
+}
+
+.about-us-image {
+    flex: 1 0 auto;
+    width: 50%; /* Adjust based on the number of images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Keyframe Animation for Horizontal Scrolling */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(50%); /* Start from right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at left */
+    }
+
+}
+/* News Container Styling */
+.news-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Optional padding */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* News Image Styling */
+.news-image {
+    display: block; /* Ensure images are displayed as block elements */
+    width: 80%; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center horizontally and add spacing */
+    opacity: 0; /* Initially hidden */
+    animation: slideIn 5s forwards; /* Apply animation */
+}
+
+/* Keyframe Animation for Sliding Effect */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Start position above the viewport */
+        opacity: 0; /* Initially hidden */
+    }
+    to {
+        transform: translateY(0); /* End position within the viewport */
+        opacity: 1; /* Fully visible */
+    }
+}
+
